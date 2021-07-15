@@ -13,6 +13,7 @@ import GuestBook from "./screens/GuestBook";
 // Import Screens For Inquiry 1 And Inquiry 2
 import InquiryOne from "./screens/InquiryOne";
 import InquiryTwo from "./screens/InquiryTwo";
+import SlideShow from "./screens/SlideShow";
 
 const Stack = createStackNavigator();
 
