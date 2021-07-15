@@ -29,7 +29,7 @@ export default function Dashboard({ navigation }) {
     }
     getUserInfo();
   });
-
+ 
   const handlePress = () => {
     loggingOut();
     navigation.replace("Home");
@@ -38,20 +38,28 @@ export default function Dashboard({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.titleText}>Dashboard</Text>
-      {/* <Text style={styles.text}>Hi {firstName}</Text> */}
-      <Text style={( styles.questionText)}>
+      <Text style={styles.questionText}>
         {" "}
         No laboramus maiestatis pri, ex vis rebum doctus?
       </Text>
+
+      {/*  Inquiry Decisions And Navigation */}
       <View style={styles.answerButtonContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("Inquiry One")}
+        >
           <Text style={styles.buttonText}>Answer 1</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("Inquiry Two")}
+        >
           <Text style={styles.buttonText}>Answer 2</Text>
         </TouchableOpacity>
       </View>
+
       <View style={styles.navContainer}>
         <TouchableOpacity
           style={styles.button}
