@@ -1,6 +1,7 @@
 import {ImageBackground, StyleSheet, View, Text} from 'react-native';
 import React from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import SlideShow from './SlideShow';
 
 export default function WelcomeScreen ({navigation}) {
   return (
@@ -16,6 +17,9 @@ export default function WelcomeScreen ({navigation}) {
       <Text style={styles.inlineText}>Already have an account?</Text>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Sign In')}>
         <Text style={styles.buttonText}>Sign In</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("SlideShow")}>
+        <Text style={styles.buttonText}>SlideShow</Text>
       </TouchableOpacity>
      </ImageBackground>
   )
