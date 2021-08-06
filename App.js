@@ -28,7 +28,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           name={"Loading"}
-          component={LoadingScreen}
+          component={SlideShow}
           options={{ headerShown: false }}
         />
         <Stack.Screen

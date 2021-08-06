@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, StyleSheet, View, Animated, Easing, ScrollView, Text, Dimensions } from 'react-native';
 import * as firebase from 'firebase';
+import FlatButton from './Button';
 
 export default function SlideShow({ navigation }) {
   const { width, height } = Dimensions.get('screen');
@@ -109,6 +110,18 @@ export default function SlideShow({ navigation }) {
             <Text style={{ width: 200, alignSelf: 'flex-end' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam harum quae sint, maxime quod molestiae praesentium ipsa. Maxime, harum? Aperiam illum id quis iste repudiandae nulla sint quod minima quaerat.</Text>
             <Text style={{ width: 200, alignSelf: 'flex-start' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam harum quae sint, maxime quod molestiae praesentium ipsa. Maxime, harum? Aperiam illum id quis iste repudiandae nulla sint quod minima quaerat.</Text>
             <Text style={{ width: 200, alignSelf: 'flex-end' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam harum quae sint, maxime quod molestiae praesentium ipsa. Maxime, harum? Aperiam illum id quis iste repudiandae nulla sint quod minima quaerat.</Text>
+            <FlatButton
+              text='button'
+              onPress={() =>
+                firebase.auth().onAuthStateChanged((user) => {
+                  if (user) {
+                    navigation.replace('Dashboard');
+                  } else {
+                    navigation.replace('Home');
+                  }
+                })
+              }
+            />
           </View>
           <View style={{ width, flexDirection: 'column', justifyContent: 'center' }}>
           </View>
