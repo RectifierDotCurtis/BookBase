@@ -120,6 +120,7 @@ export default function SlideShow({ navigation }) {
                     navigation.replace('Home');
                   }
                 })
+                // navigation.navigate('Home')
               }
             />
           </View>

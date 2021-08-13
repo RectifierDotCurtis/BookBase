@@ -1,7 +1,7 @@
 import { StyleSheet, TouchableOpacity, Animated, Easing, Text } from 'react-native';
 import React from 'react';
 
-export default function Button({ text }) {
+export default function Button({ text, onPress }) {
     const SPRING_CONFIG = { tension: 2, friction: 3 };
 
     const fadeAmin = new Animated.Value(1);
@@ -56,7 +56,7 @@ export default function Button({ text }) {
         //         > {text}</Animated.Text>
         //     </Animated.View>
         // </TouchableOpacity>
-        <TouchableOpacity activeOpacity={.8} onPressIn={handelPressIn} onPressOut={handlePressOut}>
+        <TouchableOpacity activeOpacity={.8} onPressIn={handelPressIn} onPressOut={handlePressOut} onPress={onPress}>
             <Animated.View style={[
                 styles.button,
                 {
