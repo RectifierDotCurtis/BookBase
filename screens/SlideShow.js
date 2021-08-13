@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, StyleSheet, View, Animated, Easing, ScrollView, Text, Dimensions } from 'react-native';
 import * as firebase from 'firebase';
-import FlatButton from './Button';
+import FlatButton from '../components/Button';
 
 export default function SlideShow({ navigation }) {
-  const { width, height } = Dimensions.get('screen');
+  const { width } = Dimensions.get('screen');
   const fadeAnim = new Animated.Value(0);
   const posAnim = new Animated.Value(0);
   const sizeAnim = new Animated.Value(2);
@@ -120,7 +120,6 @@ export default function SlideShow({ navigation }) {
                     navigation.replace('Home');
                   }
                 })
-                // navigation.navigate('Home')
               }
             />
           </View>

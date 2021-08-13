@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Alert } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import {signIn} from '../API/firebaseMethods';
+
+import { signIn } from '../API/firebaseMethods';
+import FlatButton from '../components/Button'
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
@@ -40,31 +41,15 @@ export default function SignIn() {
         secureTextEntry={true}
       />
 
-      <TouchableOpacity style={styles.button} onPress={handlePress}>
+      <FlatButton text={'Submit'} onPress={handlePress}>
         <Text style={styles.buttonText}>Sumbit</Text>
-      </TouchableOpacity>
+      </FlatButton>
 
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  button: {
-    width: 200,
-    padding: 5,
-    backgroundColor: '#ff9999',
-    borderWidth: 2,
-    borderColor: 'white',
-    borderRadius: 15,
-    alignSelf: 'center',
-    margin: "2%",
-  },
-  buttonText: {
-    fontSize:20,
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
   container: {
     height: '100%',
     width: '100%',
@@ -74,9 +59,9 @@ const styles = StyleSheet.create({
   },
   formInput: {
     width: 300,
-    fontSize:18,
+    fontSize: 18,
     borderWidth: 1,
-    borderColor:'#a4eddf',
+    borderColor: '#a4eddf',
     padding: 10,
     margin: 5,
   },

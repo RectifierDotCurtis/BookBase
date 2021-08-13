@@ -1,27 +1,21 @@
-import {ImageBackground, StyleSheet, View, Text} from 'react-native';
 import React from 'react';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import SlideShow from './SlideShow';
+import { ImageBackground, StyleSheet, View, Text } from 'react-native';
 
-export default function WelcomeScreen ({navigation}) {
+import FlatButton from '../components/Button'
+
+export default function WelcomeScreen({ navigation }) {
   return (
-     <ImageBackground
+    <ImageBackground
       style={styles.background}
       source={require('../assets/background.jpg')}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Welcome To Rectifier Media and Technology</Text>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Sign Up')} >
-        <Text style={styles.buttonText}>Sign Up</Text>
-       </TouchableOpacity>
+      <FlatButton text={'Sign Up'} onPress={() => navigation.navigate('Sign Up')} />
       <Text style={styles.inlineText}>Already have an account?</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Sign In')}>
-        <Text style={styles.buttonText}>Sign In</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("SlideShow")}>
-        <Text style={styles.buttonText}>SlideShow</Text>
-      </TouchableOpacity>
-     </ImageBackground>
+      <FlatButton text={'Sign In'} onPress={() => navigation.navigate('Sign In')} />
+      <FlatButton text={'SlideShow'} onPress={() => navigation.navigate("SlideShow")} />
+    </ImageBackground>
   )
 }
 
@@ -30,21 +24,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  button: {
-    width: 200,
-    borderRadius: 15,
-    borderWidth: 3,
-    borderColor: 'white',
-    backgroundColor: '#4ecdc4',
-    padding: 5,
-    margin: '2%'
-  },
-  buttonText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'navy',
-    textAlign: 'center'
   },
   inlineText: {
     fontSize: 20,

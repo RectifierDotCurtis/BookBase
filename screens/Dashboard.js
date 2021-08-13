@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, Alert } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import * as firebase from "firebase";
+
 import { loggingOut } from "../API/firebaseMethods";
+import FlatButton from '../components/Button'
 
 export default function Dashboard({ navigation }) {
   let currentUserUID = firebase.auth().currentUser.uid;
@@ -29,7 +30,7 @@ export default function Dashboard({ navigation }) {
     }
     getUserInfo();
   });
- 
+
   const handlePress = () => {
     loggingOut();
     navigation.replace("Home");
@@ -45,31 +46,14 @@ export default function Dashboard({ navigation }) {
 
       {/*  Inquiry Decisions And Navigation */}
       <View style={styles.answerButtonContainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate("Inquiry One")}
-        >
-          <Text style={styles.buttonText}>Answer 1</Text>
-        </TouchableOpacity>
+        <FlatButton text={'Answer 1'} onPress={() => navigation.navigate("Inquiry One")} />
 
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate("Inquiry Two")}
-        >
-          <Text style={styles.buttonText}>Answer 2</Text>
-        </TouchableOpacity>
+        <FlatButton text={'Answer 2'} onPress={() => navigation.navigate("Inquiry Two")} />
       </View>
 
       <View style={styles.navContainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate("GuestBook")}
-        >
-          <Text style={styles.buttonText}>GuestBook</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={handlePress}>
-          <Text style={styles.buttonText}>Log Out</Text>
-        </TouchableOpacity>
+        <FlatButton text={'Guest Book'} onPress={() => navigation.navigate("GuestBook")} />
+        <FlatButton text={'Log Out'} onPress={handlePress} />
       </View>
     </View>
   );
@@ -82,25 +66,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#3FC5AB",
     alignItems: "center",
     justifyContent: "center",
-  },
-
-  button: {
-    width: 150,
-    padding: 8,
-    backgroundColor: "#ff9999",
-    borderWidth: 2,
-    borderColor: "white",
-    borderRadius: 15,
-    alignSelf: "center",
-    marginTop: 5,
-    marginHorizontal: 8,
-  },
-
-  buttonText: {
-    fontSize: 20,
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center",
   },
 
   answerButtonContainer: {

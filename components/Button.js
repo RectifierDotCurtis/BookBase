@@ -66,7 +66,7 @@ export default function Button({ text, onPress }) {
                         }
                     ]
                 }]}>
-                <Text style={[styles.buttonText, {}]}>{text}</Text>
+                <Text style={styles.buttonText}>{text}</Text>
             </Animated.View>
         </TouchableOpacity>
     )
@@ -75,17 +75,18 @@ export default function Button({ text, onPress }) {
 const styles = StyleSheet.create({
     button: {
         borderRadius: 8,
-        paddingVertical: 14,
-        paddingHorizontal: 10,
-        backgroundColor: 'black',
-        width: '50%',
+        backgroundColor: '#040916',
         alignSelf: 'center',
-        opacity: 0.9
+        opacity: 0.78,
+        marginVertical: 5,
+        marginHorizontal: 5
     },
     buttonText: {
-        color: 'purple',
+        color: '#7122FA',
         textTransform: 'uppercase',
         textAlign: 'center',
-        fontSize: 16
+        fontSize: 16,
+        paddingVertical: 16,
+        paddingHorizontal: 30,
     }
 })
