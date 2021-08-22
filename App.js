@@ -14,6 +14,7 @@ import GuestBook from "./screens/GuestBook";
 import InquiryOne from "./screens/InquiryOne";
 import InquiryTwo from "./screens/InquiryTwo";
 import SlideShow from "./screens/SlideShow";
+import CenterHub from "./screens/CenterHub";
 
 const Stack = createStackNavigator();
 
@@ -70,6 +71,11 @@ export default function App() {
         <Stack.Screen
           name={"Inquiry Two"}
           component={InquiryTwo}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name={"CenterHub"}
+          component={CenterHub}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

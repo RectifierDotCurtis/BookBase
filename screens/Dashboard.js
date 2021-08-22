@@ -53,6 +53,7 @@ export default function Dashboard({ navigation }) {
 
       <View style={styles.navContainer}>
         <FlatButton text={'Guest Book'} onPress={() => navigation.navigate("GuestBook")} />
+        <FlatButton text={'Center Hub'} onPress={() => navigation.navigate("CenterHub")} />
         <FlatButton text={'Log Out'} onPress={handlePress} />
       </View>
     </View>
